@@ -2,7 +2,7 @@
 
 
 
-# Debug Tips
+
 
 1. Use test data
 
@@ -317,4 +317,28 @@
           main()
       ```
 
-      
+12. Load json file
+
+    ```python
+    import json
+    d = json.dumps(file)
+    ```
+
+13. Use slice to get data
+
+    ```python
+    ######    0123456789012345678901234567890123456789012345678901234567890'
+    record = '....................100 .......513.25 ..........'
+    SHARES = slice(20, 23)
+    PRICE = slice(31, 37)
+    cost = int(record[SHARES]) * float(record[PRICE])
+    ```
+
+14. Use list generator
+
+    ```python
+    nums = [1, 2, 3, 4, 5]
+    s = sum(x * x for x in nums)
+    ```
+
+    
