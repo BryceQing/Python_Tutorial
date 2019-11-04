@@ -1,6 +1,16 @@
 You can find the original article in https://python3-cookbook.readthedocs.io/zh_CN/latest/c01/p15_group_records_based_on_field.html
 
-1. Deque
+1. Set
+
+   ```python
+   a = set()
+   b = set()
+   a.intersection(b)
+   ```
+   
+   
+   
+2. Deque
 
    ```python
    from collections import deque
@@ -13,7 +23,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
 
    
 
-2. Heapq
+3. Heapq
 
    ```python
    import Heapq
@@ -26,7 +36,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
    heapq.heapify(heap)
    ```
 
-3. Priority Queue
+4. Priority Queue
 
    ```python
    #Use heapq to build priority queue structure.
@@ -44,7 +54,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
            return heapq.heappop(self._queue)[-1]
    ```
 
-4. MultiDict
+5. MultiDict
 
    ```python
    #Use defaultdict from collections is a good choice and it will auto assign key value.
@@ -64,7 +74,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
      d[key].append(value)
    ```
 
-5. OrderedDict
+6. OrderedDict
 
    ```python
    #If you want to keep the order that elements insert, you can use orderDict.
@@ -81,7 +91,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
    #There exists a bi-direction list in orderedDict to keep the order that elements insert. Every time a new element insert, it will be put the tail position of this list and if it exists the order of key will not be changed.
    ```
 
-6. Operation of dict
+7. Operation of dict
 
    - Use zip to find minimum and maximum value.
 
@@ -120,7 +130,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
      a.items & b.items()
      ```
 
-7. Counter
+8. Counter
 
    ```python
    from collections import Counter
@@ -133,7 +143,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
    d = a - b
    ```
 
-8. Itemgetter
+9. Itemgetter
 
    ```python
    rows = [
@@ -149,7 +159,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
    rows_by_lfname = sorted(rows, key=itemgetter('lname','fname'))
    ```
 
-9. Attrgetter
+10. Attrgetter
 
    ```python
    #Sort object by the attribute.
@@ -157,7 +167,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
    sorted(users, key=attrgetter('user_id'))
    ```
 
-10. Itertools.groupby()
+11. Itertools.groupby()
 
     ```python
     rows = [
@@ -183,7 +193,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
             print(' ', i)
     ```
 
-11. Filter
+12. Filter
 
     ```python
     values = ['1', '2', '-3', '-', '4', 'N/A', '5']
@@ -196,7 +206,7 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
     ivals = list(filter(is_int, values))
     ```
 
-12. ChainMap
+13. ChainMap
 
     ```python
     from collections import ChainMap

@@ -48,7 +48,37 @@
 
    
 
-4. Counter
+4. Sort
+
+   ```python
+   sorted(arr, key = len)
+   sorted(arr, key = str.lower)
+   
+   #cmp_to_key
+   def largestNumber(nums):
+     from functools import cmp_to_key:
+       def helper(x, y):
+         if x + y > y + x:
+           return -1
+         elif x + y < y + x:
+           return 1
+         else:
+           return 0
+        sorted(arr, key = cmp_to_key(helper))
+       
+   #Use class magic method
+   def largestNumber(nums):
+     def __lt(self, other):
+       return self + other > other + self
+    	sorted(arr, key = large_num)
+     
+   #Sorted one by one
+   sorted(a, key = lambda x : (x[0], -x[1]))
+   ```
+
+   
+
+5. Counter
 
    ```python
    # A counter tool is provided to support convenient and rapid tallie
@@ -56,14 +86,14 @@
    arr = Counter(input()).values()
    ```
 
-5. Int to binary string
+6. Int to binary string
 
    ```python
    st =  "{0:032b}".format(n)
    st = "{0:{fill}{width}}".format(n, fill = '0', width = 32)
    ```
 
-6. Find median number from array
+7. Find median number from array
 
    ```python
    #Method 1: Use quick sort method
@@ -105,7 +135,7 @@
    
    ```
 
-7. Multiple  Processes
+8. Multiple  Processes
 
    ```python
    #Multiple process
@@ -132,7 +162,7 @@
        main()
    ```
 
-8. Multiple threads and lock
+9. Multiple threads and lock
 
    ```python
    from time import sleep
@@ -188,7 +218,7 @@
        main()
    ```
 
-9. Coroutine
+10. Coroutine
 
    ```python
    from multiprocessing import Process, Queue
@@ -232,7 +262,7 @@
        main()
    ```
 
-10. Request
+11. Request
 
     ```python
     #Http protocal by using request module.
@@ -276,7 +306,7 @@
     
     ```
 
-11. Socket
+12. Socket
 
     - Tcp Socket:
 
@@ -317,14 +347,14 @@
           main()
       ```
 
-12. Load json file
+13. Load json file
 
     ```python
     import json
     d = json.dumps(file)
     ```
 
-13. Use slice to get data
+14. Use slice to get data
 
     ```python
     ######    0123456789012345678901234567890123456789012345678901234567890'
@@ -334,7 +364,7 @@
     cost = int(record[SHARES]) * float(record[PRICE])
     ```
 
-14. Use list generator
+15. Use list generator
 
     ```python
     nums = [1, 2, 3, 4, 5]
