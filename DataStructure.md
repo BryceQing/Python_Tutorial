@@ -209,11 +209,14 @@ You can find the original article in https://python3-cookbook.readthedocs.io/zh_
 13. ChainMap
 
     ```python
-    from collections import ChainMap
-    c = ChainMap(a, b)
-    print(c['x']) #Outputs 1 (from a )
-    print(c['y']) #Outputs 2 (from b)
-    print(c['z']) #Outputs 3 (from a)
+      from collections import ChainMap
+      a = {"x":1, "z":3}
+      b = {"y":2, "z":4}
+      c = ChainMap(a,b)
+      print(c)
+      print("x: {}, y: {}, z: {}".format(c["x"], c["y"], c["z"]))
+      ChainMap({'x': 1, 'z': 3}, {'y': 2, 'z': 4})
+      x: 1, y: 2, z: 3
     ```
 
     
